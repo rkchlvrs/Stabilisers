@@ -13,6 +13,7 @@ describe PagesController do
     it "should have the correct title" do
       get 'about'
       response.should have_tag("title", "Stabilisers - About")
+    end
   end
   
   describe "GET 'home'" do
@@ -24,6 +25,7 @@ describe PagesController do
     it "should have the correct title" do
       get 'home'
       response.should have_tag("title", "Stabilisers - Home")
+    end
   end
 
   describe "GET 'contact'" do
@@ -35,6 +37,7 @@ describe PagesController do
     it "should have the correct title" do
       get 'contact'
       response.should have_tag("title", "Stabilisers - Contact")
+    end
   end
 
 end
