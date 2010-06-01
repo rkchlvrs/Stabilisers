@@ -1,14 +1,16 @@
 class PagesController < ApplicationController
+  @@base_title = "Stabilisers - "
+  
   def home
-    @title = 'Stabilisers - Home'
+    @title = @@base_title + 'Home'
   end
 
   def contact
-    @title = 'Stabilisers - Contact'
+    @title = @@base_title + 'Contact'
   end
   
   def about
-    @title = 'Stabilisers - About'
+    @title = @@base_title + 'About'
   end
 
 end
