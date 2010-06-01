@@ -1,2 +1,2 @@
 rails -v 2.3.8
-haml -v 3.0.7
+haml v 3.0.9
