@@ -1,0 +1,9 @@
+ul.navigation {
+	padding: 0;
+}
+
+.navigation li {
+	display: inline;
+	list-style-type: none;
+	padding: 0 10px 0 0;
+}
