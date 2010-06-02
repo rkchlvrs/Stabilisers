@@ -17,4 +17,9 @@ describe "LayoutLinks" do
     response.should render_template('pages/about')
   end 
   
+  it "should have a Sign Up page at '/signup'" do
+    get '/signup'
+    response.should render_template('users/new')
+  end
+  
 end
