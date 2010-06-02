@@ -1,13 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
-  map.about '/about', :controller => 'pages', :action => 'about'
-  map.contact '/contact', :controller => 'pages', :action => 'contact'
-  map.signup '/signup', :controller => 'users', :action => 'new'
-  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
+  map.about '/about', :controller => 'pages', :action => 'about'
+  map.contact '/contact', :controller => 'pages', :action => 'contact'
+  map.signup '/signup', :controller => 'users', :action => 'new'
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
@@ -15,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products
+  map.resources :users
 
   # Sample resource route with options:
   #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
