@@ -4,3 +4,4 @@
 		%li= link_to 'Sign in', '#'
 		%li= link_to 'About', about_url
 		%li= link_to 'Contact', contact_url
+	= debug(params) if Rails.env.development?
