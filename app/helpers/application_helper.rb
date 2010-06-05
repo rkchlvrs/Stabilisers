@@ -7,7 +7,10 @@ module ApplicationHelper
     if @title.nil?
       base_title
     else
-      "#{base_title} - #{@title}"
+      # the h before (@title) is short for html_escape
+      # it protects against script attacks
+      # might not be necessary with a) Rails 3.0 and b) haml :escape-html option
+      "#{base_title} - #{h(@title)}"
     end
   end
   

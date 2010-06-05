@@ -68,7 +68,7 @@ describe User do
     end
     
     it "should have a matching password confirmation" do
-      User.new(@attr.merge(:password_confirmation => "notfoobar")).
+      User.new(@attr.merge(:password_confirmation => "invalid")).
         should_not be_valid
     end
     
@@ -99,6 +99,37 @@ describe User do
     
     it "should save the encrypted password" do
       @user.encrypted_password.should_not be_blank
+    end
+    
+    describe "has_password? method" do
+      
+      it "should be true if the passwords match" do
+        @user.has_password?(@attr[:password]).should be_true
+      end
+      
+      it "should be false if the passwords don't match" do
+        @user.has_password?("invalid").should be_false
+      end
+      
+    end
+    
+    describe "authenticate method" do
+      
+      it "should return nil on email/password mismatch" do
+        user_wrong_password = User.authenticate(@attr[:email], "wrongpass")
+        user_wrong_password.should be_nil
+      end
+      
+      it "should return nil for an email address with no user" do
+        nonexistent_user = User.authenticate("bar@foo.com", @attr[:password])
+        nonexistent_user.should be_nil
+      end
+      
+      it "should return the user on correct password/email" do
+        valid_user = User.authenticate(@attr[:email], @attr[:password])
+        valid_user.should == @user
+      end
+  
     end
     
   end    
