@@ -20,12 +20,12 @@ describe UsersController do
     
     it "should have the correct title" do
       get :show, :id => @user
-      response.should have_tag("tittle", /#{user.name}/) 
+      response.should have_tag("title", /#{@user.name}/) 
     end
     
     it "should include the users name" do
       get :show, :id => @user
-      response.should have_tag(".username", /#{user.name}/)
+      response.should have_tag(".username", /#{@user.name}/)
     end
     
     it "should have a profile image" do

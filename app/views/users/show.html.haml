@@ -1,2 +1,2 @@
-= @user.name
-= @user.email
+.username= @user.name
+= image_tag(@user.gravatar_url, :class => 'gravatar') 
