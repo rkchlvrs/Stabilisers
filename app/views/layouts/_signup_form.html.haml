@@ -1,0 +1,18 @@
+%fieldset.sign-up-form
+	- form_for(@user) do |f|
+		%p
+			= f.error_messages
+		%p
+			= f.label :name
+			= f.text_field :name, :placeholder => "Your name"
+		%p	
+			= f.label :email
+			= f.text_field :email, :placeholder => "Your email"
+		%p
+			= f.label :password
+			= f.password_field :password, :placeholder => "A password"
+		%p
+			= f.label :password_confirmation
+			= f.password_field :password_confirmation, :placeholder => "Can you repeat that please?"
+		%p
+			= f.submit "Sign up"
