@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :email, :password, :password_confirmation
+  # 1 (short) line for gravatars
   is_gravtastic!
   
   EmailRegex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
